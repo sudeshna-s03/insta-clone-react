@@ -10,4 +10,17 @@
   object-fit: contain;
   padding: 20px;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+.app_posts{
+  padding: 20px;
+}
+.app_headerImage{
+  object-fit: contain;
+}
+.app_signup{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
