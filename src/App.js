@@ -34,7 +34,7 @@ function App() {
   useEffect( () => {
     db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       setPosts(snapshot.docs.map(doc => ({
-        id: [doc.id] ,
+        id: doc.id,
         post: doc.data(),
       })));
     })
@@ -162,8 +162,8 @@ function App() {
       {/* <Button onClick={handleOpen}>SIGN UP</Button> */}
       <div className="app_posts">
       {
-        posts.map(({Id, post}) =>(
-          <Post key={Id} username= {post.username} user={user} caption={post.caption} imageURL={post.imageURL}/>
+        posts.map(({id,post}) =>(
+          <Post key={id} postId={id} username= {post.username} user={user} caption={post.caption} imageURL={post.imageURL}/>
         ))
       }
       </div>

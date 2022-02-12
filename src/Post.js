@@ -10,7 +10,7 @@ function Post({postId, user, username, caption, imageURL}) {
   useEffect(() =>{
     let unsubscribe;
     if (postId) {
-      unsubscribe= db
+      unsubscribe=db
        .collection("posts")
        .doc(postId)
        .collection("comments")
@@ -25,6 +25,7 @@ function Post({postId, user, username, caption, imageURL}) {
   }, [postId]);
   const postComment = (event) => {
     event.preventDefault();
+    console.log(postId);
     db.collection("posts").doc(postId).collection("comments").add({
       text: comment,
       username: user.displayName,
